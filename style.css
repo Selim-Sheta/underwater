@@ -1,0 +1,110 @@
+html {
+    background: url("https://cdn.glitch.com/29e6951a-6dd3-4b12-a147-f5d76d8de175%2Fbackground.png?v=1601224963591") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body {
+    /*the overflow is clipped, and the rest of the content is hidden */
+    overflow: hidden;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.header {
+    padding: 10px;
+    text-align: center;
+    color: paleturquoise;
+    font-size: 30px;
+    font-family : "Arial Black", Gadget, sans-serif;
+    margin: 0 auto;
+}
+
+.footer {
+    padding: 20px;
+    text-align: left;
+    color: paleturquoise;
+    font-size: 14px;
+    font-family : "Arial Black", Gadget, sans-serif;
+    position: fixed;
+    bottom: 0;
+}
+
+section {
+    height: 100%;
+    width: 100%;
+}
+
+span {
+    /* span is positioned relative to the nearest positioned ancestor*/
+    position: absolute;
+    /* The pointer-events CSS property sets under what circumstances (if any)
+    a particular graphic element can become the target of pointer events.
+    none => The element is never the target of pointer events. */
+    pointer-events: none;
+    /* Animation */
+    background-color: paleturquoise;
+    animation-name: spanAnimate;
+    animation-duration: 7.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes spanAnimate {
+    0% {
+        transform: scale(0) translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateY(-500%) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+bleep {
+    /* span is positioned relative to the nearest positioned ancestor*/
+    position: absolute;
+    /* The pointer-events CSS property sets under what circumstances (if any)
+    a particular graphic element can become the target of pointer events.
+    none => The element is never the target of pointer events. */
+    pointer-events: none;
+    /* Animation */
+    background-color: gold;
+    animation-name: bleepAnimate;
+    animation-duration: 0.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+
+/* set the default transition time */
+:root {
+    --movAmtY: 250%;
+    --movAmtX: 250%;
+}
+
+@keyframes bleepAnimate {
+    0% {
+        transform: scale(0.05) translateY(0) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(0.5) translateY(var(--movAmtY)) translateX(var(--movAmtX)) rotate(360deg);
+        opacity: 0;
+    }
+}

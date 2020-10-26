@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Underwater</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" charset="UTF-8"></script>
+</head>
+<body>
+    <div class="header">
+        <h1>Click Anywhere.</h1>
+    </div>
+    <div class="footer">
+        <h2>Underwater</h2>
+        <h2>By Selim Sheta @mjrmls</h2>
+    </div>
+    <section></section>
+    <script>
+        function createSquare(){
+            const section = document.querySelector('section');
+            const square = document.createElement('span');
+
+            let docElem = document.documentElement;
+            let body = document.getElementsByTagName('body')[0];
+            let width = docElem.clientWidth || body.clientWidth;
+            let height = docElem.clientHeight|| body.clientHeight;
+
+            // dimensions of the square
+            let size = Math.random() * 20;
+            square.style.width = 2 + size + 'px';
+            square.style.height = 20 + size + 'px';
+            square.style.filter = "blur(" + (100/size) + "px)";
+
+            // position of the square. innerHeight and innerWidth are
+            // the height and width of the window's content area.
+            square.style.left = Math.random() * width + 'px';
+            square.style.top = Math.random() * height + 'px';
+
+            // appendChild is a method to append an item in a list.
+            // Here, an item "square" is added to the element 'section'
+            section.appendChild(square)
+
+            // remove square after 5s
+            setTimeout(() => {
+                square.remove()
+            },7500)
+        }
+
+        // create a square every 150 ms
+        setInterval(createSquare, 100)
+    </script>
+</body>
+</html>
